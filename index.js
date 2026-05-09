@@ -10,7 +10,10 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 // middleware
 app.use(
   cors({
-    origin: "http://localhost:5173", // your React app URL
+    origin: [
+      "http://localhost:5173",
+      "https://your-app.vercel.app"  // 👈 replace with your real Vercel URL
+    ],
     credentials: true,
   }),
 );
