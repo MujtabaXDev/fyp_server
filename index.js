@@ -18,7 +18,7 @@ app.use(express.json());
 
 //connect to mongoDB config
 mongoose
-  .connect(`mongodb://localhost:27017/econest-cafe`)
+  .connect("mongodb+srv://mujtabafarooqdev_db_user:Cafe12345@cluster0.u6hhlyf.mongodb.net/cafedb?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => console.log("MongoDB connected..."));
 
 // jwt authentication
