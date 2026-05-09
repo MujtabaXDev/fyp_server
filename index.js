@@ -1,10 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
 const port = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
-require("dotenv").config();
+
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 // middleware
@@ -42,7 +43,9 @@ app.use("/menu", menuRoutes);
 app.use("/carts", cartRoutes);
 app.use("/users", userRoutes);
 app.use("/payments", paymentRoutes);
-
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
 //stripe payment route
 app.post("/create-payment-intent", async (req, res) => {
   const { price } = req.body;
