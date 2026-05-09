@@ -13,7 +13,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://your-app.vercel.app"  // 👈 replace with your real Vercel URL
+      "https://fyp-lovat-three.vercel.app/"  // 👈 replace with your real Vercel URL
     ],
     credentials: true,
   }),
